@@ -2884,19 +2884,19 @@ GtkPlacesSidebar.sidebar {
 
   $_placesidebar_icons_opacity: 0.7;
 
-  SidebarRow {
-    padding-left: 14px;
-    padding-right: 6px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+  SidebarRow { padding: 8px 2px; }
+
+  .sidebar-icon {
+    padding-left: 8px;
+    padding-right: 8px;
+    opacity: $_placesidebar_icons_opacity; // dim the device icons
   }
 
-  SidebarRow > GtkBox > GtkImage { opacity: $_placesidebar_icons_opacity; } // dim the device icons
   @at-root .sidebar-button.button { // @at-root needded to not change the specificity making button styling inheritance broken
                                     // so istead of "GtkPlacesSidebar.sidebar .sidebar-button.button" [specificity 0,0,3,1]
                                     // the extended selector ".sidebar-button.button" [specificity 0,0,2,0]
-    
-    &.image-button { padding: 6px; }
+
+    &.image-button { padding: 4px; }
 
     @extend .button.flat;
     border-radius: 100%;
